@@ -1,0 +1,30 @@
+body {
+    background-color: #353333;
+    color: #e0e0e0;
+    font-family: monospace;
+}
+
+.controles-avanzados {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  background: #111;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bloque-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.bloque-control label {
+  font-size: 13px;
+  color: #00ff00;
+  margin-bottom: 5px;
+}
+
+.bloque-control input[type="range"] {
+  width: 120px;
+  margin-bottom: 5px;
+}

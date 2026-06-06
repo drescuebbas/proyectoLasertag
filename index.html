@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div id="control-container">
+      <h2>paneldeControl</h2>
+      <button id="btn-proyector" onclick="abrirProyector()">ventanaPalproyector</button>
+      
+      <div id="debug-info">
+        <p>pot: <span id="val-pot">0</span> | color: <span id="val-rgb">0, 0, 0</span> | ESP32: <span id="val-estado">conectando...</span></p>
+        
+        <div class="controles-avanzados">
+          <div class="bloque-control">
+            <label>tolerancia:</label><br>
+            <input type="range" id="umbral" min="1" max="150" value="50">
+          </div>
+          
+          <div class="bloque-control">
+            <label>ajustes:</label><br>
+            <button onclick="guardarAjustes()" style="margin-bottom: 5px; background: #00ff00; color: black; border: none; padding: 5px; cursor: pointer;">guardarPreset</button>
+            <button onclick="borrarAjustes()" style="background: #ff4444; color: white; border: none; padding: 5px; cursor: pointer;">borrarPreset</button>
+          </div>
+          <!-- <div class="bloque-control">
+            <label>modoPotenciometro:</label><br>
+            <select id="modo-potenciometro">
+              <option value="grosor">grosor</option>
+              <option value="color">color</option>
+            </select>
+          </div> -->
+        </div>
+      </div>
+      <p class="instrucciones">
+        1. <strong>arrastra</strong> las esquinas para delimitar la mascara.<br>
+        2. haz click en el laser para calibrar el color.<br>
+        3. presiona <strong>'R'</strong> para borrar el lienzo.
+      </p>
+    </div>
+
+    <main id="lienzo-container">
+    </main>
+
+    <script src="sketch.js"></script>
+    <script>
+      function abrirProyector() {
+        window.open('projector.html', 'LienzoProyector', 'width=1200,height=800');
+      }
+    </script>
+  </body>
+</html>
